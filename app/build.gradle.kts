@@ -53,6 +53,7 @@ android {
 
 dependencies {
 
+    implementation("com.google.android.gms:play-services-location:21.2.0")
     val hilt_version = "2.48"
     val retrofit_version = "2.11.0"
     val glide_version = "4.14.2"
@@ -93,6 +94,9 @@ dependencies {
 
     //ViewModel
     implementation("androidx.fragment:fragment-ktx:1.6.2")
+
+    //Live Event
+    implementation("com.github.hadilq:live-event:1.3.0")
 }
 
 // Allow references to generated code

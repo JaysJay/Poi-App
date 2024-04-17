@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RoundedAlertDialog" parent="MaterialAlertDialog.Material3">
+        <item name="android:windowBackground">@drawable/background_cardview</item>
+        <item name="android:theme">@style/Theme.AppCompat.NoActionBar</item>
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+    </style>
+</resources>

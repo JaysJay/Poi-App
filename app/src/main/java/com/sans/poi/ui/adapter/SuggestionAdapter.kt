@@ -5,29 +5,30 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sans.poi.R
+import com.sans.poi.data.model.Suggestion
 import com.sans.poi.databinding.SingleItemLayoutBinding
 
 class SuggestionAdapter :
     RecyclerView.Adapter<SuggestionAdapter.ViewHolder>() {
 
-    private val suggestions = mutableListOf<String>()
-    private var onClickListener: ((String) -> Unit)? = null
+    private val suggestions = mutableListOf<Suggestion.DataItem>()
+    private var onClickListener: ((data: Suggestion.DataItem) -> Unit)? = null
 
-    fun onClickListener(listener:(String) -> Unit){
+    fun onClickListener(listener:(data: Suggestion.DataItem) -> Unit){
         onClickListener = listener
     }
 
-    fun replaceList(lmenu: List<String>){
+    fun replaceList(lmenu: List<Suggestion.DataItem>){
         suggestions.clear()
         suggestions.addAll(lmenu)
         notifyDataSetChanged()
     }
 
     inner class ViewHolder(private val binding: SingleItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(suggestion: String) {
+        fun bind(suggestion: Suggestion.DataItem) {
             suggestion.let {
                 with(binding){
-                    tvSuggetion.text = it
+                    tvSuggetion.text = it.description
                     itemView.setOnClickListener { view ->
                         onClickListener?.invoke(it)
                     }

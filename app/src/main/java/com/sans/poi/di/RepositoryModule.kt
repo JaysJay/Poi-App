@@ -10,6 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -18,24 +19,9 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun providePoiApi(
-        client: OkHttpClient
-    ): POIApiService {
-        return Retrofit.Builder()
-            .baseUrl(API_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(POIApiService::class.java)
-    }
-
-    @Provides
-    @Singleton
     fun providePoiRepository(
-        api: POIApiService
-    ): POIRepository {
-        return POIRepository(api)
-    }
+        retrofit: Retrofit
+    ): POIApiService = retrofit.create(POIApiService::class.java)
 
 
 }
