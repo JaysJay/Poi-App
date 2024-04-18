@@ -20,3 +20,6 @@ how to get 'API_KEY' value,
 Sign up on the website, and you will see your 'API_KEY' value when you are testing API
 
 Detail onprogress --
+
+App Test
+https://drive.google.com/file/d/1BFxXMRwOkH2tObDzBYEXdC1m9xkJzit2/view?usp=sharing
